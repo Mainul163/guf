@@ -469,18 +469,20 @@
                 <div class="card mb-4">
 
                     <div class="card-body">
-                        <form>
+                        <form action="{{route('gufInfo')}}" method="POST" enctype="multipart/form-data">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-name">আবেদনকারী নাম</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="basic-default-name" />
+                                    <input type="text" class="form-control" name='name' id="basic-default-name" />
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-company">আবেদনকারীর জাতীয়
                                     পরিচয় পত্র</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="basic-default-company" />
+                                    <input type="text" class="form-control" name='national_id'
+                                        id="basic-default-company" />
                                 </div>
                             </div>
 
@@ -488,7 +490,7 @@
                                 <label class="col-sm-2 col-form-label" for="basic-default-company">মোবাইল
                                     নাম্বার</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="basic-default-company" />
+                                    <input type="text" class="form-control" name='mobile' id="basic-default-company" />
                                 </div>
                             </div>
 
@@ -499,11 +501,11 @@
                             </div>
 
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-company ">জেলা</label>
+                                <label class="col-sm-2 col-form-label" for="basic-default-company ">বিভাগ</label>
 
                                 <div class="col-sm-10">
                                     <!-- <label for="browser"></label> -->
-                                    <input list="browsers" name="browser" id="browser" class="form-select">
+                                    <input list="browsers" name="division" id="browser" class="form-select">
 
                                     <datalist id="browsers">
                                         <!-- <option value="আজকের দিন">
@@ -511,45 +513,192 @@
                                         <option value="বাতের ">
                                         <option value="কাজের ">
                                         <option value="যোগাযোগ "> -->
-                                        <option selected></option>
-                                        <option value="1"></option>
-                                        <option value="2"></option>
-                                        <option value="3"></option>
+
+                                        @foreach($division as $row)
+                                        <option value="{{$row->DIVISION_NAME_B}}">
+
+                                            @endforeach
+
+                                    </datalist>
+                                </div>
+                            </div>
+
+
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="basic-default-company ">জেলা</label>
+
+                                <div class="col-sm-10">
+                                    <!-- <label for="browser"></label> -->
+                                    <input list="suggestions" name="district" id="browser" class="form-select">
+
+                                    <datalist id="suggestions">
+                                        <!-- <option value="আজকের দিন">
+                                        <option value="সকাল ">
+                                        <option value="বাতের ">
+                                        <option value="কাজের ">
+                                        <option value="যোগাযোগ "> -->
+
+                                        @foreach($district as $rows)
+                                        <option value="{{$rows->DISTRICT_NAME_B}}">
+
+                                            @endforeach
+
                                     </datalist>
                                 </div>
                             </div>
 
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-email">Email</label>
+                                <label class="col-sm-2 col-form-label" for="basic-default-company ">থানা</label>
+
                                 <div class="col-sm-10">
-                                    <div class="input-group input-group-merge">
-                                        <input type="text" id="basic-default-email" class="form-control"
-                                            placeholder="john.doe" aria-label="john.doe"
-                                            aria-describedby="basic-default-email2" />
-                                        <span class="input-group-text" id="basic-default-email2">@example.com</span>
-                                    </div>
-                                    <div class="form-text">You can use letters, numbers & periods</div>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-phone">Phone No</label>
-                                <div class="col-sm-10">
-                                    <input type="text" id="basic-default-phone" class="form-control phone-mask"
-                                        placeholder="658 799 8941" aria-label="658 799 8941"
-                                        aria-describedby="basic-default-phone" />
+                                    <!-- <label for="browser"></label> -->
+                                    <input list="suggestion" name="thana" id="browser" class="form-select">
+
+                                    <datalist id="suggestion">
+                                        <!-- <option value="আজকের দিন">
+                                        <option value="সকাল ">
+                                        <option value="বাতের ">
+                                        <option value="কাজের ">
+                                        <option value="যোগাযোগ "> -->
+
+                                        @foreach($thana as $rows)
+                                        <option value="{{$rows->THANA_NAME_B}}">
+
+                                            @endforeach
+
+                                    </datalist>
                                 </div>
                             </div>
 
 
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-message">Message</label>
+                                <label class="col-sm-2 col-form-label" for="basic-default-name">ভুক্তভোগির নাম</label>
                                 <div class="col-sm-10">
-                                    <textarea id="basic-default-message" class="form-control"
-                                        placeholder="Hi, Do you have a moment to talk Joe?"
+                                    <input type="text" class="form-control" name='victim_Name'
+                                        id="basic-default-name" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="basic-default-company">ভুক্তভোগির জাতীয়
+                                    পরিচয় পত্র</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name='victim_national_id'
+                                        id="basic-default-company" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="basic-default-company">ভুক্তভোগির মোবাইল
+                                    নাম্বার</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name='victim_mobile'
+                                        id="basic-default-company" />
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="basic-default-company">ভুক্তভোগির
+                                    ঠিকানা</label>
+
+                            </div>
+
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="basic-default-company ">বিভাগ</label>
+
+                                <div class="col-sm-10">
+                                    <!-- <label for="browser"></label> -->
+                                    <input list="browsers" name="victim_division" id="division" class="form-select">
+
+                                    <datalist id="division">
+                                        <!-- <option value="আজকের দিন">
+                                        <option value="সকাল ">
+                                        <option value="বাতের ">
+                                        <option value="কাজের ">
+                                        <option value="যোগাযোগ "> -->
+
+                                        @foreach($division as $row)
+                                        <option value="{{$row->DIVISION_NAME_B}}">
+
+                                            @endforeach
+
+                                    </datalist>
+                                </div>
+                            </div>
+
+
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="basic-default-company ">জেলা</label>
+
+                                <div class="col-sm-10">
+                                    <!-- <label for="browser"></label> -->
+                                    <input list="suggestions" name="victim_district" id="browser" class="form-select">
+
+                                    <datalist id="suggestions">
+                                        <!-- <option value="আজকের দিন">
+                                        <option value="সকাল ">
+                                        <option value="বাতের ">
+                                        <option value="কাজের ">
+                                        <option value="যোগাযোগ "> -->
+
+                                        @foreach($district as $rows)
+                                        <option value="{{$rows->DISTRICT_NAME_B}}">
+
+                                            @endforeach
+
+                                    </datalist>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="basic-default-company ">থানা</label>
+
+                                <div class="col-sm-10">
+                                    <!-- <label for="browser"></label> -->
+                                    <input list="suggestion" name="victim_thana" id="browser" class="form-select">
+
+                                    <datalist id="suggestion">
+                                        <!-- <option value="আজকের দিন">
+                                        <option value="সকাল ">
+                                        <option value="বাতের ">
+                                        <option value="কাজের ">
+                                        <option value="যোগাযোগ "> -->
+
+                                        @foreach($thana as $rows)
+                                        <option value="{{$rows->THANA_NAME_B}}">
+
+                                            @endforeach
+
+                                    </datalist>
+                                </div>
+                            </div>
+
+
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="basic-default-message">অসুবিধার
+                                    বিবরণ</label>
+                                <div class="col-sm-10">
+                                    <textarea id="basic-default-message" name="message" class="form-control"
                                         aria-label="Hi, Do you have a moment to talk Joe?"
                                         aria-describedby="basic-icon-default-message2"></textarea>
                                 </div>
                             </div>
+
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="basic-default-company">প্রয়োজনীয়
+                                    অর্থ</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name='required_money'
+                                        id="basic-default-company" />
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="basic-default-company">প্রয়োজনের সময়
+                                </label>
+                                <div class="col-sm-10">
+                                    <input type="date" class="form-control" name='amount' id="basic-default-company" />
+                                </div>
+                            </div>
+
                             <div class="row justify-content-end">
                                 <div class="col-sm-10">
                                     <button type="submit" class="btn btn-primary">Send</button>
