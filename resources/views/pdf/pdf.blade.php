@@ -12,10 +12,8 @@
 </head>
 
 <body>
-    <h1>hi</h1>
-    @foreach($gufData as $row)
-    <h1>{{$row->name}}</h1>
-    @endforeach
+    < @foreach($gufData as $row) <h1>{{$row->name}}</h1>
+        @endforeach
 </body>
 
 </html>
