@@ -21,3 +21,4 @@ Route::get('/', function () {
     return view('welcome',compact('district','division','thana'));
 });
 Route::post('/guf/store', [App\Http\Controllers\GufInsertController::class, 'store'])->name('gufInfo');
+Route::get('/guf/index', [App\Http\Controllers\GufInsertController::class, 'index'])->name('guf');

@@ -8,22 +8,44 @@ class GufInsertController extends Controller
 {
     //
 
-    public function index(Request $request){
+    public function index(){
 
-       $district=DB::table('geo_set_district')->get();
-       $division=DB::table('geo_set_division')->get();
-       return view ('/.welcome',compact('district','division'));
-     
-    
+    $gufData=DB::table('guf_info')->latest('id')->limit(1)->get();
+    return view('pdf.pdf',compact('gufData'));
+             
     
         }
 
 
     public function store(Request $request){
+        $newImageName =time().'-'.$request->name.'.'.$request->img->extension();
+        $status='pending';
+      $request->img->move(public_path('images'),$newImageName);
+
+      $data=array(
+        "name"=>$request->name,
+        "national_id"=>$request->national_id,
+        "mobile"=>$request->mobile,
+        "division"=>$request->division,
+        "district"=>$request->district,
+        "thana"=>$request->thana,
+         "victim_name"=>$request->victim_Name,
+         "victim_national_id"=>$request->victim_national_id,
+         "victim_mobile"=>$request->victim_mobile,
+         "victim_division"=>$request->victim_division,
+         "victim_district"=>$request->victim_district,
+         "victim_thana"=>$request->victim_thana,
+         "message"=>$request->message,
+         "required_money"=>$request->required_money,
+         "time"=>$request->time,
+         "img"=> $newImageName,
+       
+ 
 
 
-    dd($request->all());
-
-
+      );
+       
+         DB::table('guf_info')->insert($data);
+         return redirect()->route('guf');
     }
 }

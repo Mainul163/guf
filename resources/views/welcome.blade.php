@@ -472,14 +472,17 @@
                         <form action="{{route('gufInfo')}}" method="POST" enctype="multipart/form-data">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-name">আবেদনকারী নাম</label>
+                                <label class="col-sm-2 col-form-label" for="basic-default-name">আবেদনকারী নাম <sapn
+                                        class="text-danger">
+                                        *</sapn></label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" name='name' id="basic-default-name" />
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-company">আবেদনকারীর জাতীয়
-                                    পরিচয় পত্র</label>
+                                    পরিচয় পত্র <sapn class="text-danger">
+                                        *</sapn></label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" name='national_id'
                                         id="basic-default-company" />
@@ -488,7 +491,8 @@
 
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-company">মোবাইল
-                                    নাম্বার</label>
+                                    নাম্বার <sapn class="text-danger">
+                                        *</sapn></label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" name='mobile' id="basic-default-company" />
                                 </div>
@@ -496,23 +500,20 @@
 
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-company">আবেদনকারীর
-                                    ঠিকানা</label>
+                                    ঠিকানা </label>
 
                             </div>
 
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-company ">বিভাগ</label>
+                                <label class="col-sm-2 col-form-label" for="basic-default-company ">বিভাগ <sapn
+                                        class="text-danger">
+                                        *</sapn></label>
 
                                 <div class="col-sm-10">
                                     <!-- <label for="browser"></label> -->
                                     <input list="browsers" name="division" id="browser" class="form-select">
 
                                     <datalist id="browsers">
-                                        <!-- <option value="আজকের দিন">
-                                        <option value="সকাল ">
-                                        <option value="বাতের ">
-                                        <option value="কাজের ">
-                                        <option value="যোগাযোগ "> -->
 
                                         @foreach($division as $row)
                                         <option value="{{$row->DIVISION_NAME_B}}">
@@ -525,18 +526,15 @@
 
 
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-company ">জেলা</label>
+                                <label class="col-sm-2 col-form-label" for="basic-default-company ">জেলা <sapn
+                                        class="text-danger">
+                                        *</sapn></label>
 
                                 <div class="col-sm-10">
                                     <!-- <label for="browser"></label> -->
                                     <input list="suggestions" name="district" id="browser" class="form-select">
 
                                     <datalist id="suggestions">
-                                        <!-- <option value="আজকের দিন">
-                                        <option value="সকাল ">
-                                        <option value="বাতের ">
-                                        <option value="কাজের ">
-                                        <option value="যোগাযোগ "> -->
 
                                         @foreach($district as $rows)
                                         <option value="{{$rows->DISTRICT_NAME_B}}">
@@ -548,18 +546,15 @@
                             </div>
 
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-company ">থানা</label>
+                                <label class="col-sm-2 col-form-label" for="basic-default-company ">থানা <sapn
+                                        class="text-danger">
+                                        *</sapn></label>
 
                                 <div class="col-sm-10">
                                     <!-- <label for="browser"></label> -->
                                     <input list="suggestion" name="thana" id="browser" class="form-select">
 
                                     <datalist id="suggestion">
-                                        <!-- <option value="আজকের দিন">
-                                        <option value="সকাল ">
-                                        <option value="বাতের ">
-                                        <option value="কাজের ">
-                                        <option value="যোগাযোগ "> -->
 
                                         @foreach($thana as $rows)
                                         <option value="{{$rows->THANA_NAME_B}}">
@@ -572,48 +567,50 @@
 
 
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-name">ভুক্তভোগির নাম</label>
+                                <label class="col-sm-2 col-form-label" for="basic-default-name">ভুক্তভোগির নাম <sapn
+                                        class="text-danger">
+                                        *</sapn></label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name='victim_Name'
+                                    <input type="text" class="form-control" required name='victim_Name'
                                         id="basic-default-name" />
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-company">ভুক্তভোগির জাতীয়
-                                    পরিচয় পত্র</label>
+                                    পরিচয় পত্র <sapn class="text-danger">
+                                        *</sapn></label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name='victim_national_id'
+                                    <input type="text" class="form-control" required name='victim_national_id'
                                         id="basic-default-company" />
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-company">ভুক্তভোগির মোবাইল
-                                    নাম্বার</label>
+                                    নাম্বার <sapn class="text-danger">
+                                        *</sapn></label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name='victim_mobile'
+                                    <input type="text" class="form-control" required name='victim_mobile'
                                         id="basic-default-company" />
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-company">ভুক্তভোগির
-                                    ঠিকানা</label>
+                                    ঠিকানা </label>
 
                             </div>
 
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-company ">বিভাগ</label>
+                                <label class="col-sm-2 col-form-label" for="basic-default-company ">বিভাগ <sapn
+                                        class="text-danger">
+                                        *</sapn></label>
 
                                 <div class="col-sm-10">
                                     <!-- <label for="browser"></label> -->
-                                    <input list="browsers" name="victim_division" id="division" class="form-select">
+                                    <input list="browsers" name="victim_division" required id="division"
+                                        class="form-select">
 
                                     <datalist id="division">
-                                        <!-- <option value="আজকের দিন">
-                                        <option value="সকাল ">
-                                        <option value="বাতের ">
-                                        <option value="কাজের ">
-                                        <option value="যোগাযোগ "> -->
 
                                         @foreach($division as $row)
                                         <option value="{{$row->DIVISION_NAME_B}}">
@@ -626,18 +623,16 @@
 
 
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-company ">জেলা</label>
+                                <label class="col-sm-2 col-form-label" for="basic-default-company ">জেলা <sapn
+                                        class="text-danger">
+                                        *</sapn></label>
 
                                 <div class="col-sm-10">
                                     <!-- <label for="browser"></label> -->
-                                    <input list="suggestions" name="victim_district" id="browser" class="form-select">
+                                    <input list="suggestions" name="victim_district" required id="browser"
+                                        class="form-select">
 
                                     <datalist id="suggestions">
-                                        <!-- <option value="আজকের দিন">
-                                        <option value="সকাল ">
-                                        <option value="বাতের ">
-                                        <option value="কাজের ">
-                                        <option value="যোগাযোগ "> -->
 
                                         @foreach($district as $rows)
                                         <option value="{{$rows->DISTRICT_NAME_B}}">
@@ -649,18 +644,16 @@
                             </div>
 
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-company ">থানা</label>
+                                <label class="col-sm-2 col-form-label" for="basic-default-company ">থানা <sapn
+                                        class="text-danger">
+                                        *</sapn></label>
 
                                 <div class="col-sm-10">
                                     <!-- <label for="browser"></label> -->
-                                    <input list="suggestion" name="victim_thana" id="browser" class="form-select">
+                                    <input list="suggestion" name="victim_thana" required id="browser"
+                                        class="form-select">
 
                                     <datalist id="suggestion">
-                                        <!-- <option value="আজকের দিন">
-                                        <option value="সকাল ">
-                                        <option value="বাতের ">
-                                        <option value="কাজের ">
-                                        <option value="যোগাযোগ "> -->
 
                                         @foreach($thana as $rows)
                                         <option value="{{$rows->THANA_NAME_B}}">
@@ -674,9 +667,10 @@
 
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-message">অসুবিধার
-                                    বিবরণ</label>
+                                    বিবরণ <sapn class="text-danger">
+                                        *</sapn></label>
                                 <div class="col-sm-10">
-                                    <textarea id="basic-default-message" name="message" class="form-control"
+                                    <textarea id="basic-default-message" name="message" required class="form-control"
                                         aria-label="Hi, Do you have a moment to talk Joe?"
                                         aria-describedby="basic-icon-default-message2"></textarea>
                                 </div>
@@ -684,18 +678,33 @@
 
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-company">প্রয়োজনীয়
-                                    অর্থ</label>
+                                    অর্থ <sapn class="text-danger">
+                                        *</sapn></label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name='required_money'
+                                    <input type="text" class="form-control" required name='required_money'
                                         id="basic-default-company" />
                                 </div>
                             </div>
 
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-company">প্রয়োজনের সময়
+                                <label class="col-sm-2 col-form-label" for="basic-default-company">প্রয়োজনের সময় <sapn
+                                        class="text-danger">
+                                        *</sapn>
                                 </label>
                                 <div class="col-sm-10">
-                                    <input type="date" class="form-control" name='amount' id="basic-default-company" />
+                                    <input type="date" class="form-control" required name='time'
+                                        id="basic-default-company" />
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="basic-default-name">ভুক্তভোগির ছবি <sapn
+                                        class="text-danger">
+                                        *</sapn></label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="file" required name='img' id="formFile"
+                                        class="@error('img') is-invalid @enderror" value="{{old('img')}}" />
+
                                 </div>
                             </div>
 
