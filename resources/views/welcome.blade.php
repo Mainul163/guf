@@ -453,14 +453,65 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <script src="{!!url('/js/jquery.min.js')!!}"></script>
+
+    <style>
+        *{
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Tiro Bangla', serif;
+        }
+        .site_logos {
+            text-align: center !important;
+            margin: 0 auto !important;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+        }
+        .site_logos .site_logo_Inner {
+            display: inline-block !important;
+            align-items: center;
+            width: auto;
+            text-align: left !important;
+        }
+        .site_logos .site_logo_Inner {
+            display: inline-block !important;
+            align-items: center;
+            width: auto;
+            text-align: left !important;
+        }
+        .site_logos .site_logo_Inner img {
+            width: 100px;
+        }
+        .site_logos .site_logo_Inner h3, .site_logos .site_logo_Inner h4 {
+            margin: 0;
+        }
+    </style>
 </head>
 
 <body class="antialiased">
+    <div class="container  text-center top_logo_section">
+        <div class="row site_logos pt-3 pb-2">
+            <div class="site_logo_Inner ">
+                <img src="{{asset('logo/'.'guf_logo.jpg')}}" alt="" width="">            
+            </div>
+            <div class="site_logo_Inner text-left">
 
+                <h3>গিয়াস উদ্দিন ফাউন্ডেশন</h3>
+                <h4>ঠিকানাঃ চকরিয়া ৪৭৪১, কক্সবাজার</h4>
+            </div>
+
+        </div>
+    </div>
 
     <div class="container-xxl flex-grow-1 container-p-y">
-        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Forms/</span> Horizontal Layouts</h4>
+        <h5 class="text-center reg_h1 mb-4" style="">আবেদন ফরম</h5>
 
         <!-- Basic Layout & Basic with Icons -->
         <div class="row">
