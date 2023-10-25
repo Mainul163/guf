@@ -11,7 +11,7 @@ class PdfController extends Controller
     public function export_pdf(){
 
       
-    $gufData=DB::table('guf_info')->latest('id')->limit(1)->get();
+        $gufData=DB::table('guf_info')->latest('id')->limit(1)->get();
 
         $pdf = \PDF::loadView('cghs.pdf',[
           
