@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Haruncpi\LaravelIdGenerator\IdGenerator;
+use App\Helpers\Helper;
 use DB;
 class GufInsertController extends Controller
 {
@@ -14,14 +16,14 @@ class GufInsertController extends Controller
     return view('pdf.pdf',compact('gufData'));
              
     
-        }
+ }
 
 
     public function store(Request $request){
         $newImageName =time().'-'.$request->name.'.'.$request->img->extension();
         $status='pending';
       $request->img->move(public_path('images'),$newImageName);
-
+    
       $data=array(
         "name"=>$request->name,
         "national_id"=>$request->national_id,
@@ -39,6 +41,7 @@ class GufInsertController extends Controller
          "required_money"=>$request->required_money,
          "time"=>$request->time,
          "img"=> $newImageName,
+        
        
  
 

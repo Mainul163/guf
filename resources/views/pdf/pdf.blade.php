@@ -61,9 +61,47 @@
     .top_info_short .table tbody tr th {
         width: 180px;
     }
+
+    * {
+        font-family: 'Montserrat', sans-serif;
+        font-family: 'Tiro Bangla', serif;
+    }
+
+    .site_logos {
+        text-align: center !important;
+        margin: 0 auto !important;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+
+    .site_logos .site_logo_Inner {
+        display: inline-block !important;
+        align-items: center;
+        width: auto;
+        text-align: left !important;
+    }
+
+    .site_logos .site_logo_Inner {
+        display: inline-block !important;
+        align-items: center;
+        width: auto;
+        text-align: left !important;
+    }
+
+    .site_logos .site_logo_Inner img {
+        width: 100px;
+    }
+
+    .site_logos .site_logo_Inner h3,
+    .site_logos .site_logo_Inner h4 {
+        margin: 0;
+    }
+
+    .site_logo_Inner img {
+        width: 100px;
+    }
     </style>
-
-
 
 </head>
 
@@ -76,168 +114,6 @@
     <img src="" alt=""> -->
 
 
-    {{-- <div class="container log_pg mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-8 col-sm-12">
-                <div class="main_Protfolio_design">
-                    <div class="card">
-                        <div class="card-body">
-                            <a href="{{route('pdf')}}" class="btn btn-primary dy_btn">Download PDF</a>
-    <img src="{{asset('images/' .$row->img)}}" width='170px' height='auto' alt='image' class="border rounded" />
-    <br><br>
-
-    <div class="display_deisgn">
-        <div class="row mb-3">
-            <label class="col-sm-4 col-form-label" for="basic-default-name">Registration Id
-                :</label>
-            <div class="col-sm-8">
-
-                <label class="col-sm-12 col-form-label" for="basic-default-name">graduated-1001{{$row->id}} </label>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label class="col-sm-4 col-form-label" for="basic-default-name">Name : </label>
-            <div class="col-sm-8">
-
-                <label class="col-sm-12 col-form-label" for="basic-default-name">{{$row->graduated_name}}</label>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label class="col-sm-4 col-form-label" for="basic-default-name">Batch : </label>
-            <div class="col-sm-8">
-
-                <label class="col-sm-12 col-form-label" for="basic-default-name">{{$row->batch}}</label>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label class="col-sm-4 col-form-label" for="basic-default-name">Mobile Number :
-            </label>
-            <div class="col-sm-8">
-
-                <label class="col-sm-12 col-form-label" for="basic-default-name">{{$row->mobile_number}}</label>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label class="col-sm-4 col-form-label" for="basic-default-name">Blood Group :
-            </label>
-            <div class="col-sm-8">
-
-                <label class="col-sm-12 col-form-label" for="basic-default-name">{{$row->blood_group}}</label>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label class="col-sm-4 col-form-label" for="basic-default-name">T-Shirt Size :
-            </label>
-            <div class="col-sm-8">
-
-                <label class="col-sm-12 col-form-label" for="basic-default-name">{{$row->t_shirt}}</label>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label class="col-sm-4 col-form-label" for="basic-default-name">Profession :
-            </label>
-            <div class="col-sm-8">
-
-                <label class="col-sm-12 col-form-label" for="basic-default-name">{{$row->profession}}</label>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label class="col-sm-4 col-form-label" for="basic-default-name">Profession Institute
-                :
-
-            </label>
-            <div class="col-sm-8">
-
-                <label class="col-sm-12 col-form-label" for="basic-default-name">{{$row->profession_institute}}</label>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label class="col-sm-4 col-form-label" for="basic-default-name">Designation :
-            </label>
-            <div class="col-sm-8">
-
-                <label class="col-sm-12 col-form-label" for="basic-default-name">{{$row->designation}}</label>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label class="col-sm-4 col-form-label" for="basic-default-name">Guest : </label>
-            <div class="col-sm-8">
-
-                <label class="col-sm-12 col-form-label" for="basic-default-name">{{$row->guest}}</label>
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <label class="col-sm-4 col-form-label" for="basic-default-name">Total : </label>
-            <div class="col-sm-8">
-
-                <label class="col-sm-12 col-form-label" for="basic-default-name">{{$row->total}}</label>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label class="col-sm-4 col-form-label" for="basic-default-name">Payment Number :
-            </label>
-            <div class="col-sm-8">
-
-                <label class="col-sm-12 col-form-label" for="basic-default-name">{{$row->bkash}}</label>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label class="col-sm-4 col-form-label" for="basic-default-name">Transaction Id :
-            </label>
-            <div class="col-sm-8">
-
-                <label class="col-sm-12 col-form-label" for="basic-default-name">{{$row->transaction_id}}</label>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label class="col-sm-4 col-form-label" for="basic-default-name">Registration Time :
-            </label>
-            <div class="col-sm-8">
-
-                <label class="col-sm-12 col-form-label" for="basic-default-name">{{$row->created_at}}</label>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="mobil_redesing">
-        <p class="card_info">আইডি : <span>{{$row->id}}</span>
-        </p>
-        <p class="card_info">ভুক্তভোগির নাম : <span>{{$row->victim_name}}</span> </p>
-        <p class="card_info">ভুক্তভোগির জাতীয় পরিচয় পত্র : {{$row->victim_national_id}}</>
-        </p>
-        <p class="card_info">ভুক্তভোগির মোবাইল নাম্বার : <span>{{$row->victim_mobile}}</span> </p>
-        <p class="card_info">ভুক্তভোগির বিভাগ : <span>{{$row->victim_division}}</span> </p>
-        <p class="card_info">ভুক্তভোগির জেলা : <span>{{$row->victim_district}}</span> </p>
-        <p class="card_info">ভুক্তভোগির থানা : <span>{{$row->victim_thana}}</span> </p>
-        <p class="card_info">Profession Institute : <span>{{$row->profession_institute}}</span>
-        </p>
-
-        <p class="card_info">Designation : <span>{{$row->designation}}</span> </p>
-        <p class="card_info">Guest : <span>{{$row->guest}}</span> </p>
-        <p class="card_info">Total : <span>{{$row->total}}</span> </p>
-        <p class="card_info">Payment Number : <span>{{$row->bkash}}</span> </p>
-        <p class="card_info">Transaction Id : <span>{{$row->transaction_id}}</span> </p>
-        <p class="card_info">Registration Time : <span>{{$row->created_at}}</span> </p>
-    </div>
-    </div>
-    </div>
-
-    </div>
-    </div>
-    </div>
-    </div> --}}
 
     <div class="container log_pg mt-2">
         <div class="row justify-content-center">
@@ -247,30 +123,31 @@
 
                     <div class="container ">
                         <div class="row">
-                            <div class="col-md-12 text-right"><a href="{{route('pdf')}}"
-                                    class="btn btn-primary dy_btsn">Download PDF</a></div>
+                            <div class="col-md-12 text-right"><a href="{{route('pdfDownload')}}"
+                                    class="btn btn-primary dy_btsn">Download
+                                    PDF</a></div>
                             <div class="col-md-12  pt-5 pb-1 px-5">
                                 {{-- <div class="top_logo text-center">
                                     <img src="{{asset('logo/'.'CGHS.png')}}" alt="" width="80">
                             </div>
-                            <a href="{{route('pdf')}}" class="btn btn-primary dy_btn">Download PDF</a>
+                            <div class="site_logo_Inner ">
+                                <img src="{{asset('logo/'.'guf_logo.jpg')}}" alt="" width="">
+                            </div>
                             <h2 class="text-center mt-2 mb-3">Invitation letter</h2> --}}
                             <div class="top_header">
+                                <img src="{{asset('logo/'.'guf_logo.jpg')}}" alt="" width="120">
 
-                                <img src="{{'data:image/png;base64,'.base64_encode(file_get_contents(public_path('logo/'.'CGHS.png')))}}"
-                                    alt="" width="120">
                                 <div class="top_tx_head">
-                                    <h3 class="top_title">CHAKARIA GOVT HIGH SCHOOL</h3>
-                                    EIIN No: 106169, Established: 1930, <br> Address: Chakaria-4741, Coxs Bazar,
-                                    Chattogram.
+                                    <h3 class="top_title">গিয়াস উদ্দিন ফাউন্ডেশন</h3>
+                                    ঠিকানাঃ চকরিয়া ৪৭৪১, কক্সবাজার.
                                     <br>
-                                    <h3 class="hed_last">CGHS Alumni Association</h3>
+                                    <!-- <h3 class="hed_last">CGHS Alumni Association</h3> -->
                                 </div>
 
                             </div>
                         </div>
                     </div>
-                    <h3 class="text-center pb-4">Registration Letter</h3>
+                    <h3 class="text-center pb-4">আবেদনকারীর তথ্য</h3>
                     <div class="row">
                         <div class="col-lg-8 col-md-12 text-left top_info_short">
                             <table class="table table-bordered tableborderless">
@@ -287,7 +164,7 @@
                                     </tr>
                                     <tr>
                                         <th>ভুক্তভোগির নাম </th>
-                                        <td>{{$row->victim_Name}}</td>
+                                        <td>{{$row->victim_name}}</td>
                                     </tr>
                                     <tr>
                                         <th>ভুক্তভোগির জাতীয় পরিচয় পত্র </th>
@@ -310,10 +187,7 @@
                                         <th>ভুক্তভোগির থানা</th>
                                         <td>{{$row->victim_thana}}</td>
                                     </tr>
-                                    <tr>
-                                        <th>Guest Number</th>
-                                        <td>{{$row->guest}}</td>
-                                    </tr>
+
                                 </tbody>
                             </table>
 
@@ -321,13 +195,13 @@
                         <div class="col-lg-4 col-md-12 text-right">
                             <div class="reg_ings_sect">
                                 <div class="bar_cds">
-                                    {!! DNS1D::getBarcodeHTML("$row->id", 'C128')!!}
+                                    {!!DNS1D::getBarcodeHTML("$row->id", 'C128')!!}
                                     <p>Regestration Barcode</p>
                                 </div><br>
                                 <img src="{{'data:image/png;base64,'.base64_encode(file_get_contents(public_path('images/'.$row->img)))}}"" width='100%' height='200px' alt='image'
                                       class=" border rounded" />
 
-                                <p>Picture</p>
+                                <p>ভুক্তভোগির ছবি</p>
                             </div>
                         </div>
 
@@ -360,18 +234,9 @@
                                         <th>আবেদনকারীর মোবাইল নাম্বার</th>
                                         <td>{{$row->mobile}}</td>
                                     </tr>
-                                    <tr>
-                                        <th>Payment Number</th>
-                                        <td>{{$row->bkash}}</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Transaction Id</th>
-                                        <td>{{$row->transaction_id}}</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Total Payment</th>
-                                        <td>{{$row->total}}</td>
-                                    </tr>
+
+
+
 
 
 
@@ -423,7 +288,7 @@
         position: absolute;
         display: inline-block;
         width: 80%;
-        top: 4px;
+        top: 35px;
         font-size: 14px;
         text-align: center;
         left: 50%;

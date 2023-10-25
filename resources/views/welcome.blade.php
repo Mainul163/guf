@@ -455,7 +455,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Tiro+Bangla:ital@0;1&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -463,35 +465,41 @@
     <script src="{!!url('/js/jquery.min.js')!!}"></script>
 
     <style>
-        *{
-            font-family: 'Montserrat', sans-serif;
-            font-family: 'Tiro Bangla', serif;
-        }
-        .site_logos {
-            text-align: center !important;
-            margin: 0 auto !important;
-            justify-content: center;
-            align-content: center;
-            align-items: center;
-        }
-        .site_logos .site_logo_Inner {
-            display: inline-block !important;
-            align-items: center;
-            width: auto;
-            text-align: left !important;
-        }
-        .site_logos .site_logo_Inner {
-            display: inline-block !important;
-            align-items: center;
-            width: auto;
-            text-align: left !important;
-        }
-        .site_logos .site_logo_Inner img {
-            width: 100px;
-        }
-        .site_logos .site_logo_Inner h3, .site_logos .site_logo_Inner h4 {
-            margin: 0;
-        }
+    * {
+        font-family: 'Montserrat', sans-serif;
+        font-family: 'Tiro Bangla', serif;
+    }
+
+    .site_logos {
+        text-align: center !important;
+        margin: 0 auto !important;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+
+    .site_logos .site_logo_Inner {
+        display: inline-block !important;
+        align-items: center;
+        width: auto;
+        text-align: left !important;
+    }
+
+    .site_logos .site_logo_Inner {
+        display: inline-block !important;
+        align-items: center;
+        width: auto;
+        text-align: left !important;
+    }
+
+    .site_logos .site_logo_Inner img {
+        width: 100px;
+    }
+
+    .site_logos .site_logo_Inner h3,
+    .site_logos .site_logo_Inner h4 {
+        margin: 0;
+    }
     </style>
 </head>
 
@@ -499,7 +507,7 @@
     <div class="container  text-center top_logo_section">
         <div class="row site_logos pt-3 pb-2">
             <div class="site_logo_Inner ">
-                <img src="{{asset('logo/'.'guf_logo.jpg')}}" alt="" width="">            
+                <img src="{{asset('logo/'.'guf_logo.jpg')}}" alt="">
             </div>
             <div class="site_logo_Inner text-left">
 
