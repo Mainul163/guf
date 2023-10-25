@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GufInsertController;
-
+use App\Http\Controllers\PdfController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,3 +22,4 @@ Route::get('/', function () {
 });
 Route::post('/guf/store', [App\Http\Controllers\GufInsertController::class, 'store'])->name('gufInfo');
 Route::get('/guf/index', [App\Http\Controllers\GufInsertController::class, 'index'])->name('guf');
+Route::get('/guf/pdf', [App\Http\Controllers\PdfController::class, 'export_pdf'])->name('pdfDownload');

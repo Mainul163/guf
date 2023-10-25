@@ -13,9 +13,9 @@ class PdfController extends Controller
       
         $gufData=DB::table('guf_info')->latest('id')->limit(1)->get();
 
-        $pdf = \PDF::loadView('cghs.pdf',[
+        $pdf = \PDF::loadView('guf.pdfFile',[
           
-            'graduatedData'=>$graduatedData,
+            'gufData'=>$gufData,
           
           
         ]) ->setOptions(['enable_php' => true])
@@ -23,7 +23,7 @@ class PdfController extends Controller
 
        
         // $pdf = PDF::loadView('communityDetails.pdf', compact('commun_details','communityDetailsTitle'))->setOptions(['defaultFont' => 'sans-serif']);
-        return $pdf->download('cghs.pdf');
+        return $pdf->download('guf.pdfFile');
 
 
 
