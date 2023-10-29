@@ -531,17 +531,14 @@
                         <form action="{{route('gufInfo')}}" method="POST" enctype="multipart/form-data">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-name">আবেদনকারী নাম <sapn
-                                        class="text-danger">
-                                        *</sapn></label>
+                                <label class="col-sm-2 col-form-label" for="basic-default-name">আবেদনকারী নাম</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" name='name' id="basic-default-name" />
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-company">আবেদনকারীর জাতীয়
-                                    পরিচয় পত্র <sapn class="text-danger">
-                                        *</sapn></label>
+                                    পরিচয় পত্র </label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" name='national_id'
                                         id="basic-default-company" />
@@ -550,8 +547,7 @@
 
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-company">মোবাইল
-                                    নাম্বার <sapn class="text-danger">
-                                        *</sapn></label>
+                                    নাম্বার </label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" name='mobile' id="basic-default-company" />
                                 </div>
@@ -564,9 +560,7 @@
                             </div>
 
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-company ">বিভাগ <sapn
-                                        class="text-danger">
-                                        *</sapn></label>
+                                <label class="col-sm-2 col-form-label" for="basic-default-company ">বিভাগ </label>
 
                                 <div class="col-sm-10">
                                     <!-- <label for="browser"></label> -->
@@ -585,9 +579,7 @@
 
 
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-company ">জেলা <sapn
-                                        class="text-danger">
-                                        *</sapn></label>
+                                <label class="col-sm-2 col-form-label" for="basic-default-company ">জেলা </label>
 
                                 <div class="col-sm-10">
                                     <!-- <label for="browser"></label> -->
@@ -605,9 +597,7 @@
                             </div>
 
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="basic-default-company ">থানা <sapn
-                                        class="text-danger">
-                                        *</sapn></label>
+                                <label class="col-sm-2 col-form-label" for="basic-default-company ">থানা </label>
 
                                 <div class="col-sm-10">
                                     <!-- <label for="browser"></label> -->

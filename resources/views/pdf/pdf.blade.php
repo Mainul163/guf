@@ -198,8 +198,9 @@
                                     {!!DNS1D::getBarcodeHTML("$row->id", 'C128')!!}
                                     <p>Regestration Barcode</p>
                                 </div><br>
-                                <img src="{{'data:image/png;base64,'.base64_encode(file_get_contents(public_path('images/'.$row->img)))}}"" width='100%' height='200px' alt='image'
+                                <img src="{{'data:image/jpg;base64,'.base64_encode(file_get_contents(public_path('images/'.$row->img)))}}"" width='100%' height='200px' alt='image'
                                       class=" border rounded" />
+                                <br>
 
                                 <p>ভুক্তভোগির ছবি</p>
                             </div>
@@ -235,17 +236,25 @@
                                         <td>{{$row->mobile}}</td>
                                     </tr>
 
-
+                                    <tr>
+                                        <th>আবেদনকারীর বিভাগ</th>
+                                        <td>{{$row->division}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>আবেদনকারীর জেলা</th>
+                                        <td>{{$row->district}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>আবেদনকারীর থানা</th>
+                                        <td>{{$row->thana}}</td>
+                                    </tr>
 
 
 
 
                                 </tbody>
                             </table>
-                            <!-- <div class="reg_footer">
-                            <P>**Batch Representation will handover Invitation letter to you**<br>
-                                **When You Came Pleace carrey your Invitation card** </P>
-                        </div> -->
+
                         </div>
 
                     </div>
